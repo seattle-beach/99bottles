@@ -4,13 +4,16 @@ class Bottles
   end
 
   def verses(max, min)
-    max.downto(min).map {|bottles| verse(bottles)}.join("\n")
+    max.downto(min)
+      .map {|bottles| verse(bottles)}
+      .join("\n")
   end
 
   def verse(num)
     first_line(num) + second_line(num)
   end
 
+private
   def bottles(num)
     if num == 0
       'no more bottles'
